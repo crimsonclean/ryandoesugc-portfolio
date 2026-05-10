@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-const BRANDS: { name: string; logo?: string }[] = [
+const BRANDS: { name: string; logo?: string; keepColor?: boolean }[] = [
   { name: "Huron", logo: "/logos/huron.png" },
-  { name: "Liftoff" },
+  { name: "Liftoff", logo: "/logos/liftoff.png", keepColor: true },
   { name: "Rone Nutrition", logo: "/logos/rone-nutrition.png" },
   { name: "Nakie", logo: "/logos/nakie.png" },
-  { name: "Roll" },
+  { name: "Roll", logo: "/logos/roll.png", keepColor: true },
   { name: "Reality Racing", logo: "/logos/reality-racing.png" },
   { name: "HiStrips", logo: "/logos/histrips.svg" },
-  { name: "Spotr" },
+  { name: "Spotr", logo: "/logos/spotr.png", keepColor: true },
   { name: "Runnr Active", logo: "/logos/runnr-active.png" },
   { name: "Menerals", logo: "/logos/menerals.png" },
   { name: "Slurp", logo: "/logos/slurp.png" },
@@ -43,7 +43,7 @@ export default function Brands() {
                     alt={brand.name}
                     width={120}
                     height={40}
-                    className="max-h-10 w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                    className={`max-h-10 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity ${brand.keepColor ? "" : "brightness-0 invert"}`}
                   />
                 </div>
               ) : (
