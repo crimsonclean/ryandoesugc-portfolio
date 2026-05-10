@@ -1,17 +1,19 @@
-const BRANDS = [
-  "Huron",
-  "Liftoff",
-  "Rone Nutrition",
-  "Nakie",
-  "Roll",
-  "Reality Racing",
-  "HiStrips",
-  "Spotr",
-  "Runnr Active",
-  "Menerals",
-  "Slurp",
-  "Byble",
-  "Three Nails",
+import Image from "next/image";
+
+const BRANDS: { name: string; logo?: string }[] = [
+  { name: "Huron", logo: "/logos/huron.png" },
+  { name: "Liftoff" },
+  { name: "Rone Nutrition", logo: "/logos/rone-nutrition.png" },
+  { name: "Nakie", logo: "/logos/nakie.png" },
+  { name: "Roll" },
+  { name: "Reality Racing", logo: "/logos/reality-racing.png" },
+  { name: "HiStrips", logo: "/logos/histrips.svg" },
+  { name: "Spotr" },
+  { name: "Runnr Active", logo: "/logos/runnr-active.png" },
+  { name: "Menerals", logo: "/logos/menerals.png" },
+  { name: "Slurp", logo: "/logos/slurp.png" },
+  { name: "Byble", logo: "/logos/byble.svg" },
+  { name: "Three Nails", logo: "/logos/three-nails.svg" },
 ];
 
 export default function Brands() {
@@ -31,18 +33,30 @@ export default function Brands() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {BRANDS.map((brand) => (
             <div
-              key={brand}
-              className="glow-card group bg-card border border-card-border rounded-2xl p-5 flex flex-col items-center justify-center text-center hover:border-accent/30 transition-colors min-h-[100px]"
+              key={brand.name}
+              className="glow-card group bg-card border border-card-border rounded-2xl p-5 flex flex-col items-center justify-center text-center hover:border-accent/30 transition-colors min-h-[120px]"
             >
-              <div className="w-10 h-10 rounded-xl bg-card-border/60 flex items-center justify-center mb-3 group-hover:bg-accent/10 transition-colors">
-                <span className="text-base font-bold text-muted group-hover:text-accent transition-colors">
-                  {brand[0]}
-                </span>
-              </div>
-              <p className="font-semibold text-sm">{brand}</p>
+              {brand.logo ? (
+                <div className="h-10 w-full flex items-center justify-center mb-3">
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={120}
+                    height={40}
+                    className="max-h-10 w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ) : (
+                <div className="w-10 h-10 rounded-xl bg-card-border/60 flex items-center justify-center mb-3 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-base font-bold text-muted group-hover:text-accent transition-colors">
+                    {brand.name[0]}
+                  </span>
+                </div>
+              )}
+              <p className="font-semibold text-sm">{brand.name}</p>
             </div>
           ))}
-          <div className="glow-card bg-card border border-card-border rounded-2xl p-5 flex items-center justify-center text-center min-h-[100px]">
+          <div className="glow-card bg-card border border-card-border rounded-2xl p-5 flex items-center justify-center text-center min-h-[120px]">
             <p className="text-sm text-muted font-medium">+ many more</p>
           </div>
         </div>
