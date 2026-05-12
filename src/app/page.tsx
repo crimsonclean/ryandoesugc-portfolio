@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
+import TrybeMetrics from "./components/TrybeMetrics";
 import Brands from "./components/Brands";
 import Portfolio from "./components/Portfolio";
 import Rates from "./components/Rates";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stats />
+      <TrybeMetrics />
       <Brands />
       <Portfolio />
       <Rates />

@@ -19,7 +19,7 @@ export default function Hero() {
 
         <p className="animate-fade-up animation-delay-200 text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10">
           $4,000+ in commissions earned in my first month on Trybe.
-          Over 3 million impressions across campaigns. I make videos that
+          Over 3.6 million impressions across campaigns. I make videos that
           convert browsers into buyers.
         </p>
 
