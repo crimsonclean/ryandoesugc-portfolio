@@ -1,8 +1,7 @@
 const PACKAGES = [
   {
-    name: "1 Video",
-    price: "$200",
-    description: "Single high-converting UGC video",
+    name: "Single Video",
+    description: "One high-converting UGC video for your brand",
     features: [
       "15–60 second video",
       "Vertical format (9:16)",
@@ -12,37 +11,37 @@ const PACKAGES = [
     popular: false,
   },
   {
-    name: "3 Videos",
-    price: "$500",
-    description: "Multi-video content package",
+    name: "Multi-Video Package",
+    description: "Multiple videos with creative variety",
     features: [
-      "3 unique UGC videos",
+      "3–5 unique UGC videos",
       "Mix of formats & styles",
       "3 business day turnaround",
       "2 rounds of revisions",
-      "Save $100 vs. singles",
+      "Bundle discount",
     ],
     popular: true,
   },
   {
-    name: "5 Videos",
-    price: "$700",
-    description: "Full campaign content suite",
+    name: "Campaign Suite",
+    description: "Full content package for larger campaigns",
     features: [
-      "5 unique UGC videos",
+      "5+ UGC videos",
       "Full creative variety",
-      "3 business day turnaround",
+      "Priority turnaround",
       "2 rounds of revisions",
-      "Save $300 vs. singles",
+      "Best per-video rate",
     ],
     popular: false,
   },
 ];
 
 const ADDONS = [
-  { name: "Hooks Pack (3 variants)", price: "$75" },
-  { name: "Usage rights for paid ads", price: "% of GMV" },
-  { name: "Whitelisting / Spark Ads", price: "Varies" },
+  "Hooks Pack (3 hook variants)",
+  "Usage rights for paid ads",
+  "Whitelisting / Spark Ads",
+  "Custom aspect ratios",
+  "Rush delivery",
 ];
 
 export default function Rates() {
@@ -51,14 +50,14 @@ export default function Rates() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">
-            Pricing
+            Services
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Rates & Packages
+            What I Offer
           </h2>
           <p className="text-muted max-w-xl mx-auto">
-            Transparent pricing. Custom packages available for multi-video deals
-            and long-term partnerships.
+            Custom packages tailored to your brand. Reach out for a quote based
+            on your campaign goals.
           </p>
         </div>
 
@@ -74,15 +73,10 @@ export default function Rates() {
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-4 py-1 rounded-full">
-                  Best Value
+                  Most Popular
                 </div>
               )}
-              <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
-              <div className="flex items-baseline gap-1 mb-3">
-                <span className="text-3xl font-bold gradient-text">
-                  {pkg.price}
-                </span>
-              </div>
+              <h3 className="text-lg font-bold mb-3">{pkg.name}</h3>
               <p className="text-sm text-muted mb-6">{pkg.description}</p>
               <ul className="flex-1 space-y-3 mb-8">
                 {pkg.features.map((feature) => (
@@ -115,7 +109,7 @@ export default function Rates() {
                     : "border border-card-border hover:border-accent/40 text-foreground"
                 }`}
               >
-                Get Started
+                Get a Quote
               </a>
             </div>
           ))}
@@ -123,22 +117,33 @@ export default function Rates() {
 
         {/* Add-ons */}
         <div className="bg-card border border-card-border rounded-2xl p-8">
-          <h3 className="text-lg font-bold mb-6">Add-Ons</h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <h3 className="text-lg font-bold mb-6">Available Add-Ons</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {ADDONS.map((addon) => (
               <div
-                key={addon.name}
-                className="flex items-center justify-between bg-background/50 rounded-xl px-4 py-3"
+                key={addon}
+                className="flex items-center gap-2.5 bg-background/50 rounded-xl px-4 py-3"
               >
-                <span className="text-sm">{addon.name}</span>
-                <span className="text-sm font-mono text-accent ml-4 shrink-0">
-                  {addon.price}
-                </span>
+                <svg
+                  className="w-4 h-4 text-accent shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                  />
+                </svg>
+                <span className="text-sm">{addon}</span>
               </div>
             ))}
           </div>
           <p className="text-xs text-muted mt-4">
             No full buyouts available. Usage rights are performance-based.
+            Contact me for custom pricing.
           </p>
         </div>
       </div>
