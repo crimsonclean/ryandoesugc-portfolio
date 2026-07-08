@@ -7,7 +7,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-6">
           <a
-            href="mailto:moneybyryan@gmail.com"
+            href="mailto:ryandoesugc@outlook.com"
             className="text-sm text-muted hover:text-foreground transition-colors"
           >
             Email

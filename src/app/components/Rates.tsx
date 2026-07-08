@@ -1,43 +1,44 @@
-const PACKAGES = [
+const SERVICES = [
   {
-    name: "Single Video",
-    description: "One high-converting UGC video for your brand",
+    name: "UGC Video Ads",
+    description: "High-converting video content optimized for Meta & TikTok ads",
     features: [
-      "15–60 second video",
-      "Vertical format (9:16)",
+      "15–60 second vertical videos (9:16)",
+      "Shot and edited for paid media",
+      "Multiple hook variants included",
       "3 business day turnaround",
-      "1 round of revisions",
-    ],
-    popular: false,
-  },
-  {
-    name: "Multi-Video Package",
-    description: "Multiple videos with creative variety",
-    features: [
-      "3–5 unique UGC videos",
-      "Mix of formats & styles",
-      "3 business day turnaround",
-      "2 rounds of revisions",
-      "Bundle discount",
+      "Revisions included",
     ],
     popular: true,
   },
   {
-    name: "Campaign Suite",
-    description: "Full content package for larger campaigns",
+    name: "Content Packages",
+    description: "Multi-video bundles for brands that need volume",
     features: [
-      "5+ UGC videos",
-      "Full creative variety",
-      "Priority turnaround",
-      "2 rounds of revisions",
+      "3–10+ videos per package",
+      "Full creative variety across videos",
       "Best per-video rate",
+      "Priority turnaround available",
+      "Bulk revisions included",
+    ],
+    popular: false,
+  },
+  {
+    name: "Ongoing Partnership",
+    description: "Consistent content on a recurring basis",
+    features: [
+      "Weekly or monthly video drops",
+      "Dedicated creator relationship",
+      "Performance-based iteration",
+      "Fastest turnaround tier",
+      "Custom terms",
     ],
     popular: false,
   },
 ];
 
 const ADDONS = [
-  "Hooks Pack (3 hook variants)",
+  "Hook variants (3+ per video)",
   "Usage rights for paid ads",
   "Whitelisting / Spark Ads",
   "Custom aspect ratios",
@@ -46,40 +47,40 @@ const ADDONS = [
 
 export default function Rates() {
   return (
-    <section id="rates" className="py-24 px-6">
+    <section id="services" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">
             Services
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            What I Offer
+            How We Can Work Together
           </h2>
           <p className="text-muted max-w-xl mx-auto">
-            Custom packages tailored to your brand. Reach out for a quote based
-            on your campaign goals.
+            Every project is scoped to your goals. Tell me what you need and
+            I&apos;ll put together a custom plan.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {PACKAGES.map((pkg) => (
+          {SERVICES.map((svc) => (
             <div
-              key={pkg.name}
+              key={svc.name}
               className={`glow-card bg-card rounded-2xl p-8 flex flex-col relative ${
-                pkg.popular
+                svc.popular
                   ? "border-2 border-accent/50"
                   : "border border-card-border"
               }`}
             >
-              {pkg.popular && (
+              {svc.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-4 py-1 rounded-full">
-                  Most Popular
+                  Most Requested
                 </div>
               )}
-              <h3 className="text-lg font-bold mb-3">{pkg.name}</h3>
-              <p className="text-sm text-muted mb-6">{pkg.description}</p>
+              <h3 className="text-lg font-bold mb-3">{svc.name}</h3>
+              <p className="text-sm text-muted mb-6">{svc.description}</p>
               <ul className="flex-1 space-y-3 mb-8">
-                {pkg.features.map((feature) => (
+                {svc.features.map((feature) => (
                   <li
                     key={feature}
                     className="flex items-start gap-2 text-sm text-foreground/80"
@@ -104,7 +105,7 @@ export default function Rates() {
               <a
                 href="#contact"
                 className={`text-center text-sm font-medium py-3 rounded-full transition-colors ${
-                  pkg.popular
+                  svc.popular
                     ? "bg-accent hover:bg-accent-dim text-white"
                     : "border border-card-border hover:border-accent/40 text-foreground"
                 }`}
@@ -115,7 +116,6 @@ export default function Rates() {
           ))}
         </div>
 
-        {/* Add-ons */}
         <div className="bg-card border border-card-border rounded-2xl p-8">
           <h3 className="text-lg font-bold mb-6">Available Add-Ons</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -142,8 +142,8 @@ export default function Rates() {
             ))}
           </div>
           <p className="text-xs text-muted mt-4">
-            No full buyouts available. Usage rights are performance-based.
-            Contact me for custom pricing.
+            No full buyouts. Usage rights are performance-based. Contact me for
+            custom pricing.
           </p>
         </div>
       </div>

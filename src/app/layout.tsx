@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UGC Creator — Portfolio & Rates",
+  title: "ryandoesugc — UGC Ads That Convert",
   description:
-    "Professional UGC creator with $4K+ in commissions and 2M+ views. View my portfolio, brand partnerships, and rates.",
+    "685 active Meta ads. 12.5M impressions. I create high-converting UGC video ads for brands. See the content and results.",
 };
 
 export default function RootLayout({

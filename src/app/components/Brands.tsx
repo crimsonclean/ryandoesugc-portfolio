@@ -22,12 +22,12 @@ export default function Brands() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">
-            Trusted By
+            Social Proof
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Brands I&apos;ve Worked With
+            Brands That Use My Content
           </h2>
-          <p className="text-muted">50+ brand partnerships and counting</p>
+          <p className="text-muted">50+ brands and counting</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">

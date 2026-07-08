@@ -3,14 +3,12 @@
 import { useRef, useState } from "react";
 
 const VIDEOS = [
-  { src: "/videos/video-1.mp4", title: "UGC Example 1" },
-  { src: "/videos/video-2.mp4", title: "UGC Example 2" },
-  { src: "/videos/video-3.mp4", title: "UGC Example 3" },
-  { src: "/videos/video-4.mp4", title: "UGC Example 4" },
-  { src: "/videos/video-5.mp4", title: "UGC Example 5" },
-  { src: "/videos/video-6.mp4", title: "UGC Example 6" },
-  { src: "/videos/video-7.mp4", title: "UGC Example 7" },
-  { src: "/videos/video-8.mp4", title: "UGC Example 8" },
+  { src: "/videos/video-1.mp4", title: "UGC Ad 1" },
+  { src: "/videos/video-2.mp4", title: "UGC Ad 2" },
+  { src: "/videos/video-3.mp4", title: "UGC Ad 3" },
+  { src: "/videos/video-4.mp4", title: "UGC Ad 4" },
+  { src: "/videos/video-5.mp4", title: "UGC Ad 5" },
+  { src: "/videos/video-6.mp4", title: "UGC Ad 6" },
 ];
 
 function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
@@ -67,7 +65,6 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
           preload="metadata"
         />
 
-        {/* Play hint — shown when not playing */}
         {!playing && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
@@ -82,7 +79,6 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
           </div>
         )}
 
-        {/* Mute/unmute indicator — shown when playing */}
         {playing && (
           <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm rounded-full p-2 pointer-events-none">
             {muted ? (
@@ -122,7 +118,6 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
           </div>
         )}
 
-        {/* Tap to unmute hint — shown briefly when playing and muted */}
         {playing && muted && (
           <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full animate-fade-in">
             Tap for sound
@@ -135,22 +130,22 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 px-6 bg-card/50">
+    <section id="work" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">
-            My Work
+            The Content
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Top Performing Content
+            Ads Running Right Now
           </h2>
           <p className="text-muted max-w-xl mx-auto">
-            Videos that drove real results — millions of impressions and
-            thousands in GMV for the brands I partner with.
+            This is the kind of content brands are spending money on.
+            Scroll-stopping UGC built for conversions.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
           {VIDEOS.map((video) => (
             <VideoCard key={video.src} video={video} />
           ))}

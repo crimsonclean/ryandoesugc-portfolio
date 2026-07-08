@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const NAV_ITEMS = [
-  { label: "Stats", href: "#stats" },
+  { label: "Results", href: "#results" },
+  { label: "Work", href: "#work" },
   { label: "Brands", href: "#brands" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Services", href: "#rates" },
+  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
